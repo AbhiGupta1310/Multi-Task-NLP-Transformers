@@ -51,7 +51,7 @@ texts = [
 
 df = ai.organize(texts)
 print(df)
-Sample Output
+###Sample Output
 ----
-customer_name|	sentiment|	sentiment_conf|	topic|	topic_conf|	summary
-John|	POSITIVE|	0.98|	compliment|	0.87|	John liked the product but delivery was slow
+|customer_name|	sentiment|	sentiment_conf|	topic|	topic_conf|	summary|
+|John|	POSITIVE|	0.98|	compliment|	0.87|	John liked the product but delivery was slow|
