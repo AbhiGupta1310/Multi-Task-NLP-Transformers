@@ -53,6 +53,7 @@ Regards, John Rick"""
 ]
 
 df = ai.organize(email)
+
 print(df)
 
 | index | customer_name | sentiment | sentiment_conf | topic | topic_conf | summary |
