@@ -31,7 +31,7 @@ The goal is to demonstrate how multiple pre-trained transformer models can be co
 
 ## How It Works
 
-1. Takes a list of customer text reviews as input  
+1. Takes a list of customer email reviews as input  
 2. For each text:
    - Detects sentiment and confidence score
    - Extracts named entities (e.g., customer name)
@@ -44,15 +44,18 @@ The goal is to demonstrate how multiple pre-trained transformer models can be co
 ## Usage Example
 ai = Assistant()
 
-texts = [
-    "John really loved the product but delivery was slow.",
-    "The service was terrible and I want a refund."
+email = [
+
+"""Subject: Issue with Order #1234
+Hi, I placed an order last week and it still hasn't arrived. Can you please look into this and let me know what's going on? I've tried tracking it but it says it's still in transit. I've checked my email and didn't see any updates from you guys, so I'm getting a bit worried. Could you please check on the status of my order and let me know when I can expect it to arrive?
+My order number is #1234.
+Regards, John Rick"""
 ]
 
-df = ai.organize(texts)
+df = ai.organize(email)
 print(df)
 
-| customer_name | sentiment | sentiment_conf | topic | topic_conf | summary |
-|--------------|:---------:|:--------------:|:-----:|:----------:|---------|
-| John         | POSITIVE  | 0.98           | compliment | 0.87 | John liked the product but delivery was slow |
+| index | customer_name | sentiment | sentiment_conf | topic | topic_conf | summary |
+|------:|---------------|-----------|----------------|-------|------------|---------|
+| 0 | John Rick | NEGATIVE | 0.9987 | complaint | 0.5408 | Subject: Issue with Order #1234. I placed an order last week and it still hasn't arrived. I've tried tracking it but it says it's still in transit. |
 
